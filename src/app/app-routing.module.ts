@@ -6,9 +6,8 @@ import { RegisterComponent } from './account/register/register.component';
 
 const routes: Routes = [
   // { path: '', component: HomeComponent },
-  { path: '', pathMatch: 'full', redirectTo: 'login' },
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent }
+  // { path: '', pathMatch: 'full', redirectTo: 'login' },
+  { path: 'account', loadChildren: () => import('./account/account.module').then(mod => mod.AccountModule), data: {breadcrumb: {skip: true }} },
   // { path: 'home', component: HomeComponent }
 ];
 @NgModule({
